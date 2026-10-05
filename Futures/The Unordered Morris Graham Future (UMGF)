@@ -1,0 +1,53 @@
+Combinatory logic, friendship, and taking turns at the lead
+Two things to flag first.
+Chronology. RTML was the template language of Viaweb, which predates Y Combinator (founded 2005). So in time, the RTML naming came first and Y Combinator second. The paper follows the real order, not the order in your request.
+Direction of the naming. I found nothing saying why Y Combinator got its name, so that connection is stated as an observation.
+1. The example
+Wikipedia's Y Combinator page says it was founded in 2005 by Paul Graham, Jessica Livingston, Robert Tappan Morris and Trevor Blackwell.
+The RTML story is on Wikipedia's RTML page. Yahoo's documentation initially said RTML stood for "Real Time Markup Language," but Graham later explained that he actually named it after Robert Morris, whose username was "rtm." RTML was the template language for Viaweb, the e-commerce platform Graham and Morris built.
+So there are two namings:
+Viaweb's language (RTML): Graham gives the lead to Morris. The language carries Morris's name.
+Y Combinator: the name carries neither founder's name. It is also the name of the fixed-point combinator in lambda calculus, Y f = f (Y f). The page I fetched doesn't say why the name was chosen, so I treat the match as an observation and not as a stated intention.
+2. Setup
+I x = x (identity)
+C f x y = f y x (flip)
+Θ f = f (Θ f) (Turing's fixed-point combinator; Curry's Y plays the same role)
+Let G be the Graham-keyed name and M the Morris-keyed name. Application is ordered, so G M and M G are different terms.
+3. Two models
+Model A: alternation. Let F = Θ C, so F = C F:
+F G M → C F G M → F M G → C F M G → F G M → …
+Symmetry: F G M =β F M G.
+Period 2: two flips restore the original order.
+Never settles: Θ C has no head normal form (it is unsolvable). The Future has no final value and exists only as the alternation.
+Model B: superposition. Let Σ f x y = f x y ⊕ f y x. Both orderings are live and either founder may lead. Model A is turn-taking over time. Model B is equal standing at one moment.
+4. Not a set, a category, or a type
+Not a set: it has no members, only the equation F = C F.
+Not a type: Θ C has no simple type. Recursive types can assign one, so "not a Type" is a deliberate stipulation and not a theorem.
+Not a category: terms can live inside a Scott-style reflexive object, but the Future is a pattern of reduction and not an object or arrow.
+5. Friendship and taking turns
+This example adds something the earlier two didn't: the lead is conferred, not taken.
+Aristotle (Nicomachean Ethics, VIII–IX): the best friendship is between equals who wish each other's good for the other's sake. Naming a language after your cofounder is a small act of that. The honor goes to the friend.
+Montaigne ("Of Friendship"): the bond is explained by "because it was he, because it was I," not by rank.
+Cicero (Laelius de Amicitia): friendship requires equality of regard.
+Conversation analysis (Sacks, Schegloff and Jefferson, 1974): turn-taking is managed locally, and the floor is passed to the other party.
+In the model, C is applied by one friend to hand the other the lead. The thesis is that in friendship, who leads is a property of the step and not of the person.
+6. The naming ledger
+Step	Name	Whose name it honors	Who chose it
+Viaweb's language	RTML	Morris ("rtm")	Graham
+Y Combinator	Y Combinator	no founder	the cofounders (reason not stated in my sources)
+Three refinements:
+The second name is the fixed point itself. The first naming applies the flip, giving Morris the lead. The second name is that of a fixed-point combinator, which is the construction that makes F possible. This is a pleasing coincidence, not a claim about intent.
+A toy prediction. Since C has period 2, a later naming would return the lead to Graham. This is a playful consequence of the model and not a forecast.
+Four cofounders. Y Combinator had four, so the two-party model is a simplification. Open question 3 below becomes concrete with n = 4.
+7. Limits of the analogy
+Nothing I found says the naming was meant as turn-taking, and I don't assert it.
+Two data points do not establish a pattern.
+A fixed point is a mathematical object. Friendship is a lived practice.
+8. Open questions
+Can a typed coinductive version of the UMGF exist without breaking the stipulation?
+Can alternation and superposition be unified, for example as probabilistic choice weighted toward whoever led last?
+Does the model extend to four cofounders, where turn-taking becomes a cyclic group action (Z/4)?
+Sources
+Wikipedia: RTML
+Wikipedia: Y Combinator
+I can put this into a PDF like the last one if you'd like.
