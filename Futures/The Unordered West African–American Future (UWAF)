@@ -1,0 +1,74 @@
+The Unordered West African–American Future (UWAF)
+Combinatory logic, friendship, and taking turns at the lead
+Flags first.
+Burkina Faso is no longer in ECOWAS. It left on January 29, 2025, with Mali and Niger. This matters for the proposal in section 7.
+The Houphouët-Boigny material is reported, not settled. Wikipedia's pages say he was hostile to Sankara and reportedly deeply involved in the 1987 coup. I couldn't open the Jeune Afrique piece on their relationship, so I treat this as reported.
+No single naming example runs through all five countries. I use the naming events that turned up in sources: Burkina Faso's name and a street in Ouagadougou.
+The ECOWAS treaty reading is from a summary view of the text. Check the Revised Treaty yourself before relying on it.
+1. The examples
+Sankara and Rawlings. Wikipedia's Burkina Faso–Ghana relations page says relations became strong when Sankara took power in 1983. The two leaders began discussing a union of Ghana and Burkina, with joint commissions and military exercises. Sankara's assassination in October 1987 set relations back, and Rawlings met Compaoré in Tamale in early 1988 to discuss repair. A GhanaWeb report says Ouagadougou named a major road after Rawlings at the inauguration of the Sankara Mausoleum. It was Burkina Faso's second major road named for a Ghanaian leader, after Nkrumah.
+The name Burkina Faso. Wikipedia says Sankara renamed Upper Volta on August 4, 1984, and that the name means "the land of upright people."
+Houphouët-Boigny and Sankara. The same page calls Houphouët-Boigny "particularly hostile" to Sankara. Wikipedia's Chantal Compaoré page says Houphouët-Boigny likely arranged Compaoré's 1985 marriage to Chantal to gain an ally inside Burkina's government, and that he was reportedly deeply involved in the 1987 coup.
+Carter and Obasanjo. Premium Times says Carter wrote to Obasanjo six days into his presidency and they corresponded almost monthly. Obasanjo visited Washington in October 1977, and Carter made a reciprocal state visit to Nigeria from March 31 to April 3, 1978. It was the first by a US president to sub-Saharan Africa. They disagreed on Zaire in 1978 and on some Middle East diplomacy.
+ECOWAS. Wikipedia gives its founding as the Treaty of Lagos on May 28, 1975, revised in Cotonou on July 24, 1993. It lists twelve current members, with Guinea-Bissau suspended. Leiden University reports that the three Sahel states left on January 29, 2025, citing sanctions after their coups, and that ECOWAS set a transition period to July 29, 2025 to let them reconsider. These sources date from early 2025, so check current membership.
+2. Setup
+I x = x (identity)
+C f x y = f y x (flip)
+Θ f = f (Θ f) (fixed-point combinator)
+In X Y, the function X leads and the argument Y is consumed. A patron–client tie has that shape. Friendship is a term where each party is the function in turn.
+3. Two models
+Model A: alternation. Let F = Θ C, so F = C F:
+F X Y → C F X Y → F Y X → C F Y X → F X Y → …
+Symmetry: F X Y =β F Y X.
+Period 2: two flips restore the original order.
+Never settles: Θ C has no head normal form (it is unsolvable). The Future has no final value and exists only as the alternation.
+Model B: superposition. Let Σ f x y = f x y ⊕ f y x. Both orderings are live at once.
+4. Not a set, a category, or a type
+Not a set: it has no members, only the equation F = C F.
+Not a type: Θ C has no simple type. Recursive types can assign one, so "not a Type" is a deliberate stipulation and not a theorem.
+Not a category: terms can live inside a Scott-style reflexive object, but the Future is a pattern of reduction and not an object or arrow.
+5. Friendship and taking turns
+Aristotle (Nicomachean Ethics, VIII–IX) separates friendships of utility, pleasure, and virtue. He also discusses concord among cities (IX.6), which is the nearest ancient analogue of friendship between states.
+Cicero (Laelius de Amicitia): friendship requires equality of regard even when power is unequal.
+Montaigne ("Of Friendship"): the bond is explained by "because it was he, because it was I," not by rank.
+Conversation analysis (Sacks, Schegloff and Jefferson, 1974): the floor is passed back and forth.
+The thesis: friendship between states is a friendship of utility when the lead is fixed and approaches friendship of equals when the lead alternates.
+6. The ledger
+Episode	Who led	In UHAF terms
+Carter–Obasanjo, 1977–78	host alternates: Washington, then Nigeria	C applied once. The next visit would be hosted in Washington
+Sankara–Rawlings, 1983–87	shared, with union talks	a live F, cut short on October 15, 1987
+Ouagadougou's Rawlings avenue	the host country honors the guest	the flip surviving both men
+Houphouët-Boigny–Compaoré	patron and ally, by marriage and reportedly by coup	X Y: the argument is consumed, the opposite of friendship
+ECOWAS and the Sahel exit	members left over sanctions	an F that became an X Y in the Sahel states' eyes
+A toy prediction: since C has period 2, the next Carter–Obasanjo-style exchange would be hosted in Washington. This is playful and not a forecast.
+7. A proposal: the United States and ECOWAS
+I'm not endorsing this. It's the best case its supporters could make.
+The obstacle. The Revised Treaty defines the "Region" as West Africa as set by an OAU resolution. The version I read has no admission procedures and no associate or observer categories. Morocco applied in 2017 and stalled over trade concerns. Mauritania, after leaving in 2000, signed an associate-membership agreement in 2017. Full US membership would therefore need a treaty amendment by ECOWAS members, and would collide with US trade and immigration law, which ECOWAS's free movement and common tariff would touch.
+The proposal, in three steps:
+An association agreement modeled on Mauritania's. The US would join as an associate partner, not a full member, with a defined trade, security, and elections-cooperation agenda.
+An alternating-lead protocol. A Joint Commission would be co-chaired by ECOWAS and the US, with the chair alternating each year and meetings alternating between Abuja and Washington, as Carter and Obasanjo's visits did.
+A no-consumption clause. Decisions would be by consensus, and no party's aid or security cooperation would be conditional on allegiance. This is the lesson of the Houphouët-Boigny–Compaoré pattern.
+Burkina Faso. Because it left ECOWAS, the proposal should include an open channel to the Alliance of Sahel States, so engagement doesn't force a choice.
+Opposing views:
+Members may refuse. ECOWAS is dealing with the Sahel exit, and admitting a non-African state could deepen the sovereignty complaint that drove it.
+Sankara is remembered as an anti-imperialist, so many who revere him would likely object to a US seat at the table.
+US domestic politics and Congress may resist binding commitments.
+Advocates of observer-only status would argue even association goes too far.
+8. Limits of the analogy
+States are not persons, and "friendship" is a metaphor here.
+Nothing I found says these events were meant as turn-taking.
+Several claims, notably Houphouët-Boigny's role in 1987, are reported by Wikipedia and not established here.
+A fixed point is a mathematical object. Friendship is a lived practice.
+9. Open questions
+Can a typed coinductive version of the UWAF exist without breaking the stipulation?
+Can alternation and superposition be unified, for example as probabilistic choice weighted toward whoever led last?
+Does the model extend to a bloc of fifteen, where turn-taking becomes a cyclic group action (Z/n)?
+Sources
+Wikipedia: Burkina Faso–Ghana relations
+GhanaWeb: Burkina Faso names major street after JJ Rawlings
+Wikipedia: Thomas Sankara
+Wikipedia: Chantal Compaoré
+Premium Times: How Carter and Obasanjo related
+Wikipedia: ECOWAS
+Leiden University: ECOWAS approves the withdrawal
+AfricanLII: Revised ECOWAS Treaty
