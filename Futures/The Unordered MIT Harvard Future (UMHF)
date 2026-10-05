@@ -1,0 +1,57 @@
+
+Combinatory logic, friendship, and taking turns at the lead
+Three things to flag first.
+The Broad Institute's name. Its official name is "The Eli & Edythe Broad Institute of MIT and Harvard," with MIT first, not "of Harvard MIT." I use the real order, because the order is part of the argument.
+The merger is not a friendship. It is an attempt by one institution to absorb another. The paper treats it as the opposite pole of the friendship model, not as an instance of it.
+Cross-registration has no start date here. The sources I fetched don't say when it began, so the paper dates it only by its 2015 figures.
+1. The examples
+The takeover attempts. According to The Crimson, Harvard began proposing mergers a year after MIT's 1861 founding, and by 1903 the schools were weighing a sixth attempt. Harvard President Charles W. Eliot championed it. MIT's founder, William B. Rogers, rejected it as an "annexation." In 1904, an MIT alumni petition drew 1,637 responses, with only eight in favor. In September 1905, the Massachusetts Supreme Judicial Court ruled that selling MIT's Back Bay campus violated its original land grant, and the merger failed.
+The joint engineering program. The same article says that from 1913 to 1917 the schools ran joint engineering degrees (about 300 bachelor's and 50 higher degrees) until a 1917 court ruling found the alliance contrary to the intent of Gordon McKay's bequest.
+The Broad Institute. The Broad Institute's history page says it was announced in June 2003 and launched in May 2004, funded by Eli and Edythe Broad's $100 million founding gift (later doubled). It grew out of about a decade of informal collaboration among scientists at MIT and Harvard. Its name leads with MIT.
+Cross-registration. The Crimson (2015) reports that about 5,000 Harvard undergraduates were eligible, with 96 Harvard College students in MIT classes and 119 MIT students in Harvard classes. First-years can't participate.
+2. Setup
+I x = x (identity)
+C f x y = f y x (flip)
+Θ f = f (Θ f) (fixed-point combinator)
+Key observation: application is asymmetric. In H M, the function H leads and the argument M is consumed. A takeover is exactly that shape. Friendship is a term where each party takes the function role in turn.
+3. Two models
+Model A: alternation. Let F = Θ C, so F = C F:
+F H M → C F H M → F M H → C F M H → F H M → …
+Symmetry: F H M =β F M H.
+Period 2: two flips restore the original order.
+Never settles: Θ C has no head normal form (it is unsolvable). The Future has no final value and exists only as the alternation.
+Model B: superposition. Let Σ f x y = f x y ⊕ f y x. Both orderings are live at once.
+4. Not a set, a category, or a type
+Not a set: it has no members, only the equation F = C F.
+Not a type: Θ C has no simple type. Recursive types can assign one, so "not a Type" is a deliberate stipulation and not a theorem.
+Not a category: terms can live inside a Scott-style reflexive object, but the Future is a pattern of reduction and not an object or arrow.
+5. Friendship and taking turns
+Aristotle (Nicomachean Ethics, VIII–IX) separates friendships of utility, pleasure, and virtue, and holds that unequal friendships need proportion. A friendship of equals wishes the other's good for the other's sake. An absorption does the opposite: it wishes the other's good only as part of one's own.
+Cicero (Laelius de Amicitia): friendship requires equality of regard even when fortune is unequal.
+Montaigne ("Of Friendship"): the bond is explained by "because it was he, because it was I," not by rank.
+Conversation analysis (Sacks, Schegloff and Jefferson, 1974): the floor is passed back and forth.
+The thesis: what separated the failed merger from the later partnerships is that the lead stopped being fixed.
+6. The ledger
+Episode	Who led	In UHAF terms
+1861–1905 proposals	Harvard; MIT opposed	H M: M is consumed. The reduction is blocked by the 1905 ruling
+1913–1917 joint engineering degrees	shared, but ended by a court	a partial F, cut short
+Broad Institute (2004)	name leads with MIT	C applied once to the historical order
+Cross-registration	both directions at once	Model B: 96 and 119 students going each way (2015)
+Three refinements:
+The name flips the old order. The merger story has Harvard leading and MIT resisting. The Broad's name puts MIT first, which is one flip. This is an observation. I found nothing saying the order was chosen for that reason.
+Cross-registration is superposition. Each school is the host for the other's students, so neither is only function or only argument.
+The order of the names is itself unstable. The Broad says "MIT and Harvard," while the Crimson headline writes "Harvard-MIT." Each institution may simply favor its own name first, so the flip may come from house style and not friendship.
+A toy prediction: since C has period 2, a future joint institute would lead with Harvard. This is playful and not a forecast.
+7. Limits of the analogy
+Institutions aren't persons, and "friendship" is a metaphor here.
+MIT and Harvard also compete, and the cooperation I cite doesn't capture that.
+Nothing I found says the naming orders express turn-taking.
+A fixed point is a mathematical object. Friendship is a lived practice.
+8. Open questions
+Can a typed coinductive version of the UMHF exist without breaking the stipulation?
+Can alternation and superposition be unified, for example as probabilistic choice weighted toward whoever led last?
+Does the model extend to a network of institutions, where turn-taking becomes a cyclic group action (Z/n)?
+Sources
+The Crimson: The Fraught Courtship of Harvard and MIT
+Broad Institute: History
+The Crimson: Harvard-MIT cross-registration
