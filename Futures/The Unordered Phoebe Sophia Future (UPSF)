@@ -1,0 +1,52 @@
+Combinatory logic, friendship, and taking turns at the lead
+Source check first. I found sources for Phia and its two founders, but I could not find any source for a second startup called Oebe in four searches. I treat Oebe below as your premise and not as a verified fact. If it's real and public, send me a link and I'll tighten the paper.
+1. The example
+Phoebe Gates and Sophia Kianni co-founded Phia, an AI shopping assistant. Fortune reported its $8M seed round in September 2025, led by Kleiner Perkins.
+The names carry a pattern. Written out:
+Phoebe = ph + oebe
+Sophia = so + phia
+Phia is Sophia's name with its opening "So" removed. Oebe is Phoebe's name with its opening "Ph" removed. So the first startup is built from Sophia's name and the second from Phoebe's. This reading is my observation. I found nothing saying the founders chose the names that way, and the Cultured profile I fetched doesn't explain where "Phia" came from.
+2. Setup
+I x = x (identity)
+C f x y = f y x (flip)
+Θ f = f (Θ f) (fixed-point combinator)
+Let S stand for the Sophia-keyed name and P for the Phoebe-keyed name. Application is ordered, so S P and P S are different terms. The question is what a shared future looks like when the order doesn't define it.
+3. Two models
+Model A: alternation. Let F = Θ C, so F = C F:
+F S P → C F S P → F P S → C F P S → F S P → …
+Symmetry: F S P =β F P S.
+Period 2: two flips restore the original order.
+Never settles: Θ C has no head normal form (it is unsolvable). The Future has no final value and exists only as the alternation.
+Model B: superposition. Let Σ f x y = f x y ⊕ f y x. Both orderings are live and either founder may lead. Model A is turn-taking over time. Model B is equal standing at one moment.
+4. Not a set, a category, or a type
+Not a set: it has no members, only the equation F = C F.
+Not a type: Θ C has no simple type. Recursive types can assign one, so "not a Type" is a deliberate stipulation and not a theorem.
+Not a category: terms can live inside a Scott-style reflexive object, but the Future is a pattern of reduction and not an object or arrow.
+5. Friendship and taking turns
+Aristotle (Nicomachean Ethics, VIII–IX): the best friendship is between equals, and the friend is "another self," so neither is permanently in charge.
+Montaigne ("Of Friendship"): the bond is explained by "because it was he, because it was I," not by rank.
+Cicero (Laelius de Amicitia): friendship requires equality of regard.
+Conversation analysis (Sacks, Schegloff and Jefferson, 1974): turn-taking is managed locally, and the floor is passed back and forth.
+The thesis is the same as before: in friendship, who leads is a property of the step and not of the person.
+6. The naming ledger
+Startup	Name derived from	Lead	Flips applied
+Phia	Sophia (minus "So")	Sophia	0 (base order)
+Oebe (your premise, unverified)	Phoebe (minus "Ph")	Phoebe	1 (C)
+Three refinements:
+The shared "ph." Both names contain the letters ph, and the first startup keeps it while the second drops it. It is the one element that survives the swap, which is a nice picture of the invariant behind the alternation.
+A toy prediction. Since C has period 2, a third venture would lead with Sophia again. This is a playful consequence of the model and not a forecast.
+Contrast with the a16z case. There, one firm name and one academy name were flipped. Here, each name is a fragment of one founder's name, so the leading is built into the spelling and not only into the word order.
+7. Limits of the analogy
+Nothing I found says the founders chose these names to take turns, and I don't assert it.
+Oebe is unverified, and two data points do not establish a pattern.
+Phia has been the subject of reported allegations. TechCrunch and Fortune covered claims in August 2026 that the app took credit for sales it did not drive. This paper makes no judgment on them, and its subject is the naming structure only.
+A fixed point is a mathematical object. Friendship is a lived practice.
+8. Open questions
+Can a typed coinductive version of the UPSF exist without breaking the stipulation?
+Can alternation and superposition be unified, for example as probabilistic choice weighted toward whoever led last?
+Does the model extend to more than two co-founders, where turn-taking becomes a cyclic group action (Z/n)?
+Sources
+Fortune: Phia raises $8 million seed round
+Cultured: Building a personal shopper for the A.I. age
+TechCrunch: reported cookie stuffing
+Fortune: Phoebe Gates and Phia
