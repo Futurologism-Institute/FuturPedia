@@ -1,0 +1,294 @@
+FuturLang Chemical Geometry
+Clopen Graph Topology of Chemical Knowledge Objects: A Triangle–Rectangle
+Architecture for Representing, Teaching, and Computing Chemical Compounds
+Advanced Topology and FuturPedia Research
+A Mathematical Futurology Proposal by Prophet Wenitte — Solo Founder
+FuturPedia Research Series · FCG-1 · Revised edition
+Abstract
+Chemistry describes molecules through formulas, diagrams, line notations (SMILES, InChI),
+coordinates, databases and laboratory records. Each solves a local problem; the fragmentation
+between them is the real obstacle for education, computation, AI and automation. This paper
+proposes FuturLang Chemical Geometry (FCG-1), a database-first architecture in which a
+compound is a structured knowledge object whose core is a typed attributed graph, drawn with
+a deliberately minimal grammar: triangles for entities and rectangles for relationships.
+The new contribution of this edition is a topological layer. We equip the graph with a finite
+topology in which clopen sets (sets that are simultaneously open and closed) are exactly the
+unions of connected components. We call a typed graph together with this topology a clopen
+graph. Clopen sets then have a direct chemical reading: they are the self-contained chemical
+species in a system, such as separate molecules in a mixture, ions in a salt, or reactant and
+product pools. Closed-but-not-open sets model fragments such as functional groups, whose
+frontier consists of attachment bonds. Together with the Betti numbers b0 (species count) and
+b1 (independent ring count), this yields validation rules that are computable, provable and
+independent of notation.
+Status of claims. “Clopen graph” is introduced here as a defined construct, not an
+established term in the literature. The theorems in §5–§7 are standard facts of finite
+topology and graph theory applied to this construct; the claims of educational or
+computational benefit in §12 are hypotheses to be tested empirically.
+1. Introduction: Representation Fragmentation
+A formula states composition. A structural diagram states connectivity. Coordinates state
+geometry. A database states relationships and metadata. A manufacturing record states
+operations. The problem is not missing chemical information but representation fragmentation.
+FCG-1 asks a different first question: not “how do we write this molecule?” but “what is the
+complete information object for this chemical entity?” The formula then becomes one derived
+attribute.
+Doctrine. Compound ≠ Formula, and Formula ⊂ Compound Knowledge. For aspirin,
+C9H8O4 (molar mass ≈ 180.16 g/mol) is a view of the object, not the object.
+FuturLang Chemical Geometry · Clopen Graph Topology · FuturPedia Research Page 1
+2. The Chemical Knowledge Object
+A compound is the tuple C = (I, N, F, S, G, P, R, Q, Π): identity, names, formula/composition,
+structure, graph, properties, rules, quality/validation, and provenance. Its mathematical core is
+M = (V, E, τ, β, P, R, Π)
+where V is the set of entities, E the relationships, τ : V → T assigns entity types (element,
+functional group, molecule, reaction, batch…), β : E → B assigns relationship types (single,
+double, triple, aromatic, ionic, semantic…), P assigns properties to V ∪ E, R is a set of rules and
+constraints, and Π stores provenance (source, method, date, version, instrument, confidence).
+The triangle–rectangle grammar
+Symbol Meaning Question answered
+△ (triangle) Entity node: atom, functional group, molecule,
+reaction, experiment, batch
+What exists?
+▭ (rectangle) Relationship: bond, containment, constraint,
+transformation, provenance link
+How are entities related?
+Nesting Triangles inside triangles for hierarchy; rectangles
+inside rectangles for composite relations
+At what level of
+abstraction?
+Because every rectangle joins entities, the drawing is a bipartite incidence graph: triangles
+on one side, rectangles on the other, each rectangle adjacent to the entities it relates. This
+detail is what makes the topology below natural rather than decorative.
+3. The Underlying Graph and Its Invariants
+Let G = (V, E) with V the entity set and E the relationship set. The adjacency matrix A has Aij =
+1 when vi and vj are connected, or Aij = bij (bond order) in the order-aware form. Two invariants
+matter for everything that follows:
+b0(G) = number of connected components, b1(G) = |E| − |V| + b0(G)
+b0 counts separate species; b1 (the cycle rank, or “circuit rank”) counts independent rings. For
+aspirin with explicit hydrogens, |V| = 21 atoms (C9H8O4) and |E| = 21 covalent bonds (13
+between heavy atoms, 8 to hydrogen), so b0 = 1 and b1 = 21 − 21 + 1 = 1, which is the single
+benzene ring. Neither number depends on how the molecule is drawn or serialized.
+4. A Finite Topology on a Graph
+To speak of clopen sets we need open sets. Treat the graph as a finite poset of “cells”: each
+edge e lies above its endpoints, written v ≤ e. Declare a set U ⊆ V ∪ E to be open when it is
+closed upward: if v ∈ U and v ≤ e, then e ∈ U. This is the Alexandrov (finite, T0) topology of the
+face poset, the same construction used for finite models of one-dimensional complexes. The
+consequences are immediate:
+• A set S is closed exactly when its complement is open, that is, when e ∈ S forces both
+endpoints of e into S. The closed sets are precisely the subgraphs (edges never dangle).
+• The closure of a set adds the endpoints of its edges; the interior keeps only those vertices all
+of whose incident edges are also present.
+• The frontier (boundary) of a set S is cl(S) − int(S). For a subgraph, it consists of its vertices
+FuturLang Chemical Geometry · Clopen Graph Topology · FuturPedia Research Page 2
+that still have bonds leaving the subgraph.
+Definition (Clopen graph). A clopen graph is a typed attributed graph G together with
+the face-poset topology T(G) above. A subset K ⊆ V ∪ E is clopen if it is both open and
+closed in T(G).
+5. The Clopen Characterization Theorem
+Theorem 1. A subset K of V ∪ E is clopen in T(G) if and only if K is a union of connected
+components of G (each component taken with all its vertices and edges). Consequently, G
+has exactly 2b0(G) clopen sets, and G is connected if and only if its only clopen sets are { }
+and the whole graph.
+Proof sketch. Suppose K is clopen. Closed means every edge in K brings its endpoints along;
+open means every vertex in K brings all its incident edges along. Starting from any element of K
+and alternating the two rules, one reaches every vertex and edge of its component, so K
+contains whole components. Conversely, a union of components satisfies both rules.
+Components partition V ∪ E into b0 blocks, and any subset of blocks gives a distinct clopen set,
+hence 2b0. For the final statement, G is connected iff b0 = 1 iff there are 2 clopen sets, { } and
+G. Q.E.D.
+This is the formal core of the proposal: “is this one molecule or several?” becomes a
+topological question with a decidable answer. Clopen sets are the parts of a system that
+can be separated with nothing cut and nothing left dangling.
+U₁ (clopen): H₂O
+U₂ (clopen): H₂
+O
+BOND BOND
+BOND
+H H
+H H
+Figure 1. A two-species system in the triangle–rectangle grammar. Dashed regions U₁ and U₂ are the two
+minimal clopen sets; here b₀ = 2, so there are 2² = 4 clopen sets ({ }, U₁, U₂, U₁ ∪ U₂).
+6. Fragments, Functional Groups and the Frontier
+Most chemically interesting sets are not clopen, and the failure is informative. Consider a
+functional group F inside a molecule, taken as a subgraph together with its internal bonds. F is
+closed because its bonds do not dangle. F is generally not open, because some atom of F
+carries a bond to the rest of the molecule. Those bonds are the frontier edges: the attachment
+points of the group.
+Fr(F) = cl(F) − int(F) = { atoms of F with at least one bond leaving F }
+FuturLang Chemical Geometry · Clopen Graph Topology · FuturPedia Research Page 3
+Proposition 2. For a closed set F (a subgraph) of a connected graph G, F is clopen if and
+only if F = { } or F = G. Hence every proper, non-empty functional group in a connected
+molecule has a non-empty frontier. A group with frontier size 1 behaves as a monovalent
+substituent, size 2 as a linking unit, and so on.
+This gives a topological definition of valence of a fragment that is independent of drawing style,
+and it is directly computable: it is the number of edges in G with exactly one endpoint in F. For a
+carboxyl group in aspirin, the frontier is the single bond to the ring carbon.
+Closed, not open: the carboxyl fragment F of acetic acid
+outside F
+O
+DOUBLE
+FRONTIER
+C
+CH₃
+BOND
+frontier edge
+BOND
+O H
+Figure 2. A closed fragment (dashed) is not open: the frontier edge connects it to the rest of the molecule. A
+clopen set would have no frontier.
+7. Chemical Interpretation Table
+Topological notion Chemical reading Computable test
+Clopen set Self-contained species: molecule, ion, or
+product pool
+Union of connected
+components
+b0(G) Number of distinct species in the system Component count
+b1(G) Number of independent rings |E| − |V| + b0
+Closed, not open set Fragment or functional group with
+attachment bonds
+Frontier non-empty
+Frontier of F Attachment points / open valences Edges with exactly one
+endpoint in F
+Open, not closed set Bonds without their atoms: a malformed
+object
+Violates closure; reject at
+validation
+Connected graph One molecule Only clopen sets are { } and
+G
+8. Clopen Validation of Compound Objects
+The earlier edition defined validity as a conjunction of identity, composition, structure, property
+and provenance checks. The topological layer sharpens the structural check. A compound object
+declared as n species must satisfy
+Vstructure(C) ⇔ b0(G) = n ∧ every edge has both endpoints in V ∧ b1(G) = declared ring
+count
+FuturLang Chemical Geometry · Clopen Graph Topology · FuturPedia Research Page 4
+The middle clause is the closedness of the whole edge set. Composition rules stay as before: the
+count of vertices with τ(v) = C must equal 9, with τ(v) = H equal 8 and with τ(v) = O equal 4 for
+aspirin. The distinction between stored and validated becomes formal: a stored object that fails
+the clopen partition test is rejected before any downstream use, for instance before conversion
+to SMILES, where a stray disconnected fragment would otherwise appear silently as a
+dot-separated component.
+9. Isomers: Why Formula Equality Is Not Identity
+Two compounds A and B can satisfy Formula(A) = Formula(B) with A ≠ B. Topology makes the
+separation concrete: isomers have identical vertex-type counts but non-isomorphic typed
+graphs. The invariants (b0, b1, degree sequence, frontier sizes of recognized groups) are cheap
+discriminators; full typed-graph isomorphism (or a canonical form) decides the question. Note
+that graph isomorphism cannot distinguish stereoisomers on its own, which is why the property
+map P must carry stereochemical and coordinate information. In logic: Formula(A) =
+Formula(B) does not imply A = B. A database-first system keeps the distinction by making the
+graph primary and the formula derived.
+10. Higher-Level Entities: Reactions, Batches and Knowledge
+Graphs
+Triangles are not limited to atoms. A triangle may stand for a functional group, molecule,
+reaction, experiment or batch, and the clopen analysis applies at each level of the hierarchy. A
+reaction is R = (S, P, C), with reactants, products and conditions; in the incidence graph a
+reaction rectangle joins reactant species to product species. Within a single system snapshot,
+reactants and products are clopen sets of the atom-level graph before and after the event.
+Atom-mapping across the reaction then records which atoms moved between clopen pools, so
+bond breaking and forming are exactly the changes to the component structure of the graph.
+Scaling upward, a compound node connects through rectangles to reactions, experiments,
+instruments, materials and publications, forming a scientific knowledge graph. The principle
+“no scientific fact without provenance” attaches Π to every property, separating measured,
+calculated, estimated, imported and proposed values.
+11. FuturLang Syntax With Topological Declarations
+COMPOUND Aspirin {
+ID: "ASPIRIN" NAME: "Acetylsalicylic acid"
+COMPOSITION: C = 9, H = 8, O = 4
+FORMULA: derived from COMPOSITION
+STRUCTURE: NODE C1 … NODE O4 ; BOND(C1,C2) …
+GROUPS: CARBOXYLIC_ACID, ESTER // closed, non-clopen fragments
+TOPOLOGY {
+B0 = 1 // one clopen component: a single molecule
+B1 = 1 // one independent ring
+FRONTIER(CARBOXYLIC_ACID) = 1
+}
+PROPERTIES: MOLAR_MASS = 180.16 g/mol [PROVENANCE …]
+VALIDATION: COUNT(C)=9, COUNT(H)=8, COUNT(O)=4, CLOPEN_PARTITION(n=1)
+}
+The syntax is illustrative, not a finalized language specification. The architectural point is that
+topological facts are declared and checked rather than inferred from a drawing.
+FuturLang Chemical Geometry · Clopen Graph Topology · FuturPedia Research Page 5
+12. Education and Computation
+Education. The traditional route is Formula → Molecule. FCG-1 proposes Object → Graph →
+Properties → Formula. Students build molecules from triangles and rectangles, then discover
+that “one molecule vs. a mixture” is a statement about connected components, that rings are
+counted by b1, and that a functional group is a piece with attachment points. This links
+chemistry to graph theory, topology and database design.
+Computation. One semantic object generates many machine representations: formula,
+SMILES, InChI, adjacency matrix, graph-network input, fingerprint, embedding, JSON, SQL and
+diagrams. Clopen decomposition is a natural batching step: each clopen component can be
+processed, embedded or simulated independently, since by Theorem 1 nothing connects it to
+the rest.
+Laboratory and manufacturing. The same grammar represents containers, instruments,
+batches and tests (for example Batch —USES→ Material, Batch —TESTED_BY→ Analysis). A
+hard rule applies throughout: representation is not execution. A compound or reaction
+object is not an authorization to make or run anything; any automation link remains under
+validated procedures, qualified equipment, access control, safety and quality systems, and
+human oversight.
+13. Research Hypotheses (Untested)
+# Hypothesis Suggested test
+H1 Students taught with structured molecular objects
+understand molecular relationships better than students
+taught formulas alone.
+Controlled classroom study with
+pre/post concept inventory
+H2 A common semantic layer lowers integration cost
+between chemical software systems.
+Round-trip conversion study:
+FCG-1 ↔ SMILES/InChI/JSON
+H3 Explicit component and ring invariants catch malformed
+records earlier than string-level checks.
+Seed errors into a public
+compound dataset; compare
+detection rates
+H4 Graph-native objects improve interoperability with
+machine-learning pipelines.
+Benchmark feature generation
+and model inputs from one object
+H5 Database-first provenance improves traceability of
+measurements.
+Audit trail completeness on a
+pilot dataset
+These are hypotheses, not findings. None should be treated as established until tested.
+14. Roadmap
+Phase Deliverable
+I Formal specification: entity and relationship grammar, type system, ontology, topology
+module (clopen decomposition, frontier, Betti numbers)
+II Prototype database of compounds, atoms, bonds, groups, properties and provenance
+III Renderer: FuturLang object → triangle–rectangle diagram, with clopen regions drawn as
+dashed boundaries
+IV Import/export: SMILES, InChI, JSON, SQL, XML
+FuturLang Chemical Geometry · Clopen Graph Topology · FuturPedia Research Page 6
+Phase Deliverable
+V AI integration: graph learning, semantic retrieval, classification
+VI Educational platform: build molecules from △ and ▭, explore components and frontiers
+VII Controlled laboratory-system integration under validated conditions
+15. Beyond Chemistry: FuturPedia
+The grammar does not depend on chemistry. Gene —EXPRESSES→ Protein, Drug —TARGETS→
+Protein, Star —ORBITED_BY→ Planet are all typed graphs, and the clopen analysis again
+answers “how many independent systems are present?” Within FuturPedia, FCG-1 serves as the
+chemical module of a wider scientific knowledge language in which documents (PDF, DOCX,
+HTML, dashboards) are generated views of a graph rather than the source of truth, much as
+compiled outputs are views of source code.
+16. Limitations
+(1) The face-poset topology is a combinatorial model: it captures connectivity, not bond
+strength, geometry or electron delocalization, which live in the property map P. (2)
+Non-covalent association (hydrogen bonds, ionic lattices, coordination) can be modeled as typed
+relationships, but then the choice of which relationship types count as “cutting” a clopen
+boundary is a modeling decision that must be declared in the rules R. (3) Hypergraph features,
+such as multi-center bonds, require extending the incidence graph, which the rectangle already
+supports as an n-ary relationship node. (4) “Clopen graph” is a proposed term and construct;
+relation to existing work on finite topological spaces, graph homology and chemical graph
+theory should be established in formal peer review.
+17. Conclusion
+FCG-1 treats a compound as a structured knowledge object, drawn with triangles and
+rectangles, stored as a typed attributed graph, and now analyzed topologically. The clopen
+graph construct turns three informal chemical ideas into theorems and tests: a species is a
+clopen set, a fragment is a closed set with a frontier, and a ring system is counted by b1. The
+resulting pipeline is
+Object → Graph → Topology → Database → Visualization → Computation → Automation
+FCG-1 summary. Primary object: Chemical Knowledge Object. Structure: typed
+attributed graph with face-poset topology. Grammar: △ = Entity, ▭ = Relationship.
+Principle: database object first; visualization is a view of data; one semantic object, many
+machine representations; understand relationships before memorizing representations.
+Prophet Wenitte — Solo Founder
+FuturPedia Research · FuturLang Chemical Geometry (FCG-1)
+FuturLang Chemical Geometry · Clopen Graph Topology · FuturPedia Research Page 7
