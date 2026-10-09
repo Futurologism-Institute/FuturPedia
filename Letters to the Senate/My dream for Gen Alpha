@@ -1,0 +1,160 @@
+# Gen Alpha Bridging Model
+
+A mathematical futurology report on building diverse friend groups and integrating newcomers
+
+Status of the numbers: every parameter below is illustrative. The structure of the model is the useful part. Real calibration should use data like Add Health, Chetty et al.'s economic connectedness studies, and local school and neighborhood records.
+
+---
+
+## 1. The problem in one equation
+
+Gen Alpha (born roughly 2010 to 2024) is about 55 million people in the US. Their friend groups will be set mostly between ages 6 and 20, so the intervention window is already open.
+
+Friendship has two separable causes, which Chetty and colleagues call exposure and friending bias:
+
+- Exposure (s): the share of people in your daily contact set who are in your own group.
+- Homophily (H): the extra tendency to befriend your own group once you are in the same room. H = 0 means friends are picked at random from the room. H = 1 means only own-group friends.
+
+The share of your friends who are in your own group is:
+
+w = s + H(1 - s)
+
+So the out-group friend share is:
+
+x = (1 - s)(1 - H)
+
+Two levers follow directly. Lower s by changing who is in the room. Lower H by changing how people interact once they are there.
+
+---
+
+## 2. Why attitudes alone fail: the Schelling result
+
+In Schelling-type models, agents who only mildly prefer own-type neighbors (roughly 30 to 40 percent) still produce heavily segregated outcomes. Individually reasonable, even tolerant, preferences aggregate into sorted schools, congregations, and friend groups.
+
+Implication: you cannot count on kids or parents simply becoming more open-minded. You have to design the contact structure so that mixing is the default outcome.
+
+---
+
+## 3. Contact dose: how many hours make a friend
+
+Model the chance that two kids become close friends after T hours together as:
+
+p(T) = 1 - exp(-lambda * T)
+
+Assume a same-group rate of lambda = 0.004 per hour, and an out-group rate of lambda * (1 - H) * m, where m is a multiplier for cooperative, equal-status, shared-goal contact (Allport's conditions). Take H = 0.6 and a 150-hour season, the size of a typical team sport or school play.
+
+Same group: lambda 0.0040 per hour, 45% friend probability after 150 hours
+Out-group, ordinary contact (m = 1): 0.0016 per hour, 21%
+Out-group, cooperative contact (m = 2): 0.0032 per hour, 38%
+
+Takeaway: cooperative contact closes most of the gap between same-group and out-group friendship, and one season does most of the work. Kids sitting near each other in class are not in this regime.
+
+---
+
+## 4. The time-budget model for a newcomer kid
+
+Consider a hypothetical Somali-American teenager whose out-of-school life is concentrated in the community. Her friend-formation weight in each setting is proportional to the time she spends there. For each setting i:
+
+x = sum of tau_i * (1 - s_i) * (1 - H_i)
+
+where tau is the share of time in that setting.
+
+Baseline:
+
+- Community and home networks: time 50%, own-group share 0.90, homophily 0.50, yield 0.05, contribution 0.025
+- School (tracked): time 40%, s 0.35, H 0.60, yield 0.26, contribution 0.104
+- Mixed activities: time 10%, s 0.20, H 0.30, yield 0.56, contribution 0.056
+- Total out-group friend share: 18.5%
+
+Intervention: free mixed activities (sports, robotics, theater, service) take 30% of time, community keeps 30%, and school detracking lowers school H to 0.45.
+
+- Community and home networks: time 30%, yield 0.05, contribution 0.015
+- School (less tracked): time 40%, yield 0.36, contribution 0.143
+- Mixed activities: time 30%, yield 0.56, contribution 0.168
+- Total out-group friend share: 32.6%
+
+That is about 1.76 times the baseline, and she still has a majority in-group friend circle (about 67%), which keeps the community's social support intact. The goal is bridging, not dissolving.
+
+Sensitivity (partial derivatives):
+
+- Shifting 10 points of time from community to mixed activities adds about +5.1 points of out-group friend share.
+- Lowering school homophily by 0.1 adds about +2.6 points.
+
+Time allocation is a stronger lever than attitude change, which is good news because time is cheaper to change than attitudes.
+
+---
+
+## 5. Many axes: race, religion, politics, class
+
+If a kid's friend is the same on axis k with probability w_k, and axes are independent, the chance that a friend is the same on all K axes is the product of the w_k.
+
+Take K = 4 axes with w = 0.7 on each:
+
+- Independent axes: same on all four = 0.7^4 = 0.24, so 76% of friendships differ on at least one axis.
+- Fully consolidated axes (race, religion, class, and politics all travel together): same on all four = 0.70, so only 30% differ on any axis.
+
+The quantity that matters is consolidation, meaning how correlated the axes are. A rich, white, secular, progressive school and a poor, Black, churchgoing, conservative school (or any mirror pairing) are the worst case for diversity because every sorting force points the same way.
+
+Design rule: build institutions that cut across axes. Sports leagues cross race. Congregations and scouting cross class. Service programs cross politics. Cross-cutting institutions beat any single-axis diversity program because they break correlations rather than moving one slider.
+
+---
+
+## 6. Newcomer integration is a two-way convergence
+
+Let D be the cultural distance between a newcomer family and the surrounding community, defined as the share of everyday practices (language use, school norms, civic habits) that are not yet shared. Each year it shrinks in proportion to contact c:
+
+D(t+1) = D(t) * (1 - (mu_new + mu_host) * c)
+
+Take mu_new = 0.08 and mu_host = 0.02. Hosts adapt more slowly, but they do adapt.
+
+- Contact c = 0.185 (baseline): 1.85% annual shrink, half-life of D about 37 years
+- Contact c = 0.326 (intervention): 3.26% annual shrink, half-life about 21 years
+
+Because the process is two-way, the host side matters. Raising mu_host (welcoming clubs, bilingual signage, hosts who initiate invitations) speeds convergence without asking newcomers to give up anything. Convergence here means a shared civic and everyday layer, not erasing religion or heritage.
+
+---
+
+## 7. Forecast scenarios, 2026 to 2041
+
+Let x be the cohort-average out-group friend share, relaxing toward a scenario-specific equilibrium x*:
+
+x(t+1) = x(t) + r * (x* - x(t))
+
+Take r = 0.15 per year, which gives a half-life of about 4.3 years (kids cycle through institutions quickly), and a starting point of x0 = 25%.
+
+Drift (status quo, online sorting, residential sorting): x* = 22%. Path: 23% in 2031, 23% in 2036, 22% in 2041
+Bridge (funded mixed activities, detracking, service year): x* = 38%. Path: 32%, 35%, 37%
+Fragment (algorithmic and residential sorting intensify): x* = 15%. Path: 19%, 17%, 16%
+
+The gap between Bridge and Fragment opens up within one school cycle and reaches about 21 points by 2041, nearly a doubling in cross-group friendship. That is the policy's whole effect size: the cohort's friend networks diverge by roughly a factor of 2.3 depending on which structure it grows up in.
+
+---
+
+## 8. Cost and scale
+
+Suppose 10 million kids are covered by subsidized, mixed-by-design activities at about $800 per kid-year (equipment, coaches, transport, fees waived).
+
+10,000,000 x $800 = $8 billion per year
+
+US public K-12 spending is on the order of $800 billion per year, so this is roughly 1% of that. Transport and scheduling, not fees, are usually the binding constraint. A free program that kids cannot get to or parents cannot pick them up from will quietly re-sort itself by income.
+
+---
+
+## 9. What could break the model
+
+- Homophily is not fixed. H may rise under perceived threat (political conflict, news events), which would cancel part of the gain.
+- Online life is a competing contact set. Algorithms feed interest and identity sorting at a scale no program can match unless time shifts away from it.
+- Status inequality inside mixed rooms. If one group always holds the bench seats, m falls toward 1 and cooperative contact stops working.
+- Backlash risk. Mandated mixing can raise H through reactance. Make mixed options attractive and easy rather than compulsory.
+- Measurement. Friend surveys overstate cross-group ties (people name acquaintances). Track time spent together and named close friends separately.
+- Parameters are guesses. The numbers are placeholders. The qualitative conclusions are the claims worth defending: time budgets dominate attitudes, cross-cutting institutions beat single-axis ones, and integration is a two-way process.
+
+---
+
+## 10. Bottom line
+
+1. Treat friendship as x = (1 - s)(1 - H) and work on both levers.
+2. Re-allocate time toward cooperative, equal-status, mixed settings, since this is the cheapest lever.
+3. Build cross-cutting institutions so the axes of difference stop moving together.
+4. Aim for bridging, not dissolution: roughly 50 to 70 percent in-group friends is healthy.
+5. Move the host community too, because newcomer integration speeds up when both sides adapt.
