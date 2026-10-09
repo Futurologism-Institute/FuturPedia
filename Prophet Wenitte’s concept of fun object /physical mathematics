@@ -1,0 +1,32 @@
+# Treating High School Algebra Like a Physics Lab
+
+*A quick note first: "futurlang" isn't something I recognize, so I'm using it as the name for this method. Also, Maxwell's equations are electromagnetism, not classical mechanics, so the genuinely mechanical examples below use Newton instead.*
+
+**An honest admission.** My earlier "Quadratic Maxwell equations" weren't clear enough. They were a costume (same shapes, new labels), not a derivation. Here's the version that actually makes sense.
+
+## The real connection
+
+Picture a ball rolling on a hilly track, pushed by the force F(x) = ax² + bx + c. The roots of the quadratic are the **balance points**, where the force is zero and the ball sits still. The discriminant Δ = b² − 4ac answers one physical question: *does a balance point exist?*
+
+- Δ > 0: two balance points
+- Δ = 0: one (they merge)
+- Δ < 0: none, so the ball always gets pushed along
+
+Changing c slides the whole curve up or down, which moves the balance points. That's a real "nudge the system, watch it respond" experiment.
+
+## ELI5 version
+
+Throw a ball in the air. Its path is a quadratic. The roots are where the ball touches the ground. If you throw it too softly, it never leaves the ground (Δ < 0). Throw it harder and it lands in two spots: where it leaves and where it lands (Δ > 0).
+
+## Assumptions as syllogisms
+
+1. All balance points are places where the force is zero. The roots of ax² + bx + c are places where the force is zero. Therefore the roots are balance points.
+2. All systems with no balance point keep moving. A system with Δ < 0 has no balance point. Therefore it keeps moving.
+3. All analogies that correctly predict outcomes are useful. The ball analogy correctly predicts the number of roots. Therefore the ball analogy is useful.
+4. No merely useful analogy is a proof. The ball analogy is merely useful. Therefore it is not a proof.
+
+## Is this an epistemological basis for a physics paradigm in pure math?
+
+As a *heuristic*, yes. Physical intuition has inspired real mathematics (dynamical systems, variational methods). As a *foundation*, no. Math is justified by proof, not experiment, so a physical picture can suggest a theorem but can't replace proving it. That's what syllogism 4 is for.
+
+Want this as a file, or should I make the syllogisms stricter?
