@@ -2,26 +2,32 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Laws of Thermodynamics — Symbolic | FuturPedia</title>
+<title>Laws of Thermodynamics | FuturPedia</title>
 <style>body{font-family:system-ui,sans-serif;max-width:860px;margin:2rem auto;padding:0 1rem;line-height:1.55}.sym{font-family:"Cambria Math",serif;font-size:1.12em}.axiom{background:#eef;padding:.7rem 1rem;border-left:4px solid #36c;margin:1rem 0}h1{border-bottom:2px solid #222}</style>
 </head>
 <body>
 <h1>Laws of Thermodynamics</h1>
 
 <div class="axiom"><strong>Zeroth Law</strong><br>
-If A is in thermal equilibrium with B and B with C, then A is in thermal equilibrium with C.<br>
-(Defines temperature as an equivalence relation.)</div>
+If system A is in thermal equilibrium with B, and B with C, then A is in thermal equilibrium with C.<br>
+Defines temperature as a transitive relation.</div>
 
 <div class="axiom"><strong>First Law</strong><br>
 <span class="sym">ΔU = Q − W</span><br>
-(Internal energy is a state function; energy is conserved.)</div>
+Energy is conserved. Heat added to a system equals the increase in internal energy plus work done by the system.</div>
 
-<div class="axiom"><strong>Second Law</strong> (Clausius / Kelvin statements + entropy)<br>
-For any irreversible process in an isolated system, <span class="sym">ΔS > 0</span>.<br>
-For a reversible process <span class="sym">dS = đQ_rev / T</span>.</div>
+<div class="axiom"><strong>Second Law</strong><br>
+The entropy of an isolated system never decreases:<br>
+<span class="sym">ΔS ≥ 0</span><br>
+Equivalently: heat does not spontaneously flow from cold to hot; no process is 100% efficient at converting heat to work.</div>
 
-<div class="axiom"><strong>Third Law</strong> (Nernst)<br>
-As T → 0, the entropy of a perfect crystal approaches a constant (often taken as zero).</div>
+<div class="axiom"><strong>Third Law</strong><br>
+As temperature approaches absolute zero, the entropy of a perfect crystal approaches a minimum (often taken as zero).<br>
+<span class="sym">lim<sub>T→0</sub> S = S₀</span></div>
+
+<div class="axiom"><strong>Entropy Definition</strong><br>
+<span class="sym">dS = đQ<sub>rev</sub> / T</span><br>
+For irreversible processes, total entropy still increases.</div>
 
 <p><em>FuturPedia formalization.</em></p>
 </body>
